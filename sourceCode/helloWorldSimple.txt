@@ -1,0 +1,25 @@
+:assemble:simple
+rem Hello World program using the simple assembler 
+
+
+push :H
+pop 1
+push :E
+pop 1
+push :L
+pop 1
+push :L
+pop 1
+push :O
+pop 1
+push :W
+pop 1
+push :O
+pop 1
+push :R
+pop 1
+push :L
+pop 1
+push :D
+pop 1
+end 0
