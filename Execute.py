@@ -1,4 +1,4 @@
-from PIL import Image 
+from PIL import Image
 
 stack = []
 
@@ -8,7 +8,7 @@ or v bad
 '''
 callstack = []
 
-pointers = [(0, 0)] # Point to the first pixel in the image 
+pointers = [(0, 0)] # Point to the first pixel in the image
 name = raw_input("What is the name of your program? ")
 # name = 'imageCode/helloWorldComplex.png'
 im = Image.open(name)
@@ -323,7 +323,7 @@ def getpointers():
 
 
 while pointers != []:
-        
+
     x, y = pointers.pop(0)
     try:
         current = pix[x, y]
@@ -331,6 +331,4 @@ while pointers != []:
         print ("Coords out of range ({0},{1})".format(x,y))
         exit(1)
 
-    
-    
     operate(current[0], current[1])

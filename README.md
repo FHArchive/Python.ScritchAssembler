@@ -1,43 +1,84 @@
+<p float="left">
+<img src="https://img.shields.io/github/languages/top/fredhappyface/Python.ScritchAssembler.svg?style=flat-square" alt="Github top language">
+<img src="https://img.shields.io/codacy/grade/:codacy-proj-id:.svg?style=flat-square" alt="Codacy grade">
+<img src="https://img.shields.io/codacy/coverage/:codacy-proj-id:.svg?style=flat-square" alt="Codacy coverage">
+<img src="https://img.shields.io/github/repo-size/fredhappyface/Python.ScritchAssembler.svg?style=flat-square" alt="Repository size">
+<img src="https://img.shields.io/github/issues/fredhappyface/Python.ScritchAssembler.svg?style=flat-square" alt="Issues">
+<img src="https://img.shields.io/github/license/fredhappyface/Python.ScritchAssembler.svg?style=flat-square" alt="License">
+<img src="https://img.shields.io/github/commit-activity/m/fredhappyface/Python.ScritchAssembler.svg?style=flat-square" alt="Commit activity">
+<img src="https://img.shields.io/github/last-commit/fredhappyface/Python.ScritchAssembler.svg?style=flat-square" alt="Last commit">
+</p>
+
 # Python.ScritchAssembler
+
+<img src="readme-assets/icons/proj-icon.png" alt="Project Icon" width="100">
+
 This program assembles assembly-like instructions into Stritch programs 
 (these are .png files). In the words of roo2319, "Scritch is an esoteric, 
 stack-based programming language". See the Scritch project here:
-https://github.com/roo2319/Scritch
+<https://github.com/roo2319/Scritch>
 
-# Language information 
-## Built for
+## Download
+### Clone
+#### Using The Command Line 
+1. Press the Clone or download button in the top right
+2. Copy the URL (link)
+3. Open the command line and change directory to where you wish to clone to
+4. Type 'git clone' followed by URL in step 2
+```bash
+$ git clone https://github.com/[user-name]/[repository]
+```
+
+More information can be found at 
+<https://help.github.com/en/articles/cloning-a-repository> 
+
+#### Using GitHub Desktop
+1. Press the Clone or download button in the top right
+2. Click open in desktop
+3. Choose the path for where you want and click Clone
+
+More information can be found at 
+<https://help.github.com/en/desktop/contributing-to-projects/cloning-a-repository-from-github-to-github-desktop>
+
+### Download Zip File
+
+1. Download this GitHub repository
+2. Extract the zip archive
+3. Copy/ move to the desired location
+
+
+## Language information 
+### Built for
 This program has been written for Python 3 and has been tested with 
-Python version 3.7.0 https://www.python.org/downloads/release/python-370/ 
+Python version 3.7.0 <https://www.python.org/downloads/release/python-370/> 
 on a Windows 10 PC. 
-## Other versions
-To install Python, go to https://www.python.org/ and download the latest version. 
-## Dependencies
-Pillow https://pypi.org/project/Pillow/. Use ```pip install Pillow``` to 
-install 
-# How to run
-1. Download or clone this GitHub repository 
-2. (If downloaded) Extract the zip archive
-3. Open the .py file in IDLE
-4. Run by pressing F5 or by selecting Run> Run Module
+### Other versions
+To install Python, go to <https://www.python.org/> and download the latest 
+version. 
+## How to run
+1. Open the .py file in IDLE
+2. Run by pressing F5 or by selecting Run> Run Module
 
-# Syntax and instructions
 
-## Code files and execution
+
+## Syntax and instructions
+
+### Code files and execution
 - Source code files are best saved as text files (.txt) 
 - Source code is assembled into 'object code', these are PNGs (.png)
 - The images are then processed by the executor 
 
-## Operand types
-### Int (8 bits)
+### Operand types
+#### Int (8 bits)
 The minimum value is 0 and the maximum is 255. This is written to the green 
 component of the pixel 
-### Char (8 bits) 
+#### Char (8 bits) 
 These are declared with a ':' and immediately follow. For example the character 
 'H' would be ':H'.  This is converted to its ASCII equivalent and is written to 
 the green component of the pixel 
 
 
-## Instructions 
+### Instructions 
 |Instruction |Description | Value |
 |:-|:-|-:|
 |```:``` |Special annotation. Can be used to comment, declare the assembler to use (on the first line only), or to use a char as an operand |N/A|
@@ -67,7 +108,7 @@ the green component of the pixel
 |```runifonly``` |Runs if it is the last pointer. (ignores operand)|22|
 
 
-## :assemble:simple
+### :assemble:simple
 General considerations:
 - :assemble:simple is the easiest way to program in Scritch source but is also 
 the least powerful
@@ -103,7 +144,7 @@ a ':')
 |```runifonly``` |```runifonly 0```||
 |```end``` |```end 0```|Leverages nop and sets blue to 0 (no pointer) this terminates the program |
 
-### More complex programs in :assemble:simple
+#### More complex programs in :assemble:simple
 Instructions that require the programmer to have knowledge of how the compiler constructs the image. 
 
 - Written to the image such that if there where 12 instructions and each 
@@ -122,7 +163,7 @@ instruction was numbered from 1 to 12, and the image had a width of 4:
 |```transform``` |```transform 12```|Assuming that the stack contains (top) [5, 2, 3]. Change the current instruction to mult 5. If the pixel is revisited through a jump, then the instruction would be mult 5 in this instance |
 
 
-## :assemble:complex
+### :assemble:complex
 A note on exit direction:
 - Next instructions are loaded in the order North, East, South, West
 for example, if n&s is specified then the instruction at position (x, y-1)
@@ -169,9 +210,9 @@ programmer to think about how the instructions will be laid out in the image)
 |```runifonly``` |```1 8 runifonly 0 n&e&s```|At pixel 1, 8 and add the instruction to the north, and east, and south to the next instruction stack|
 
 
-## Hello World - Example 
+### Hello World - Example 
 
-### :assemble:simple 
+#### :assemble:simple 
 |Code |Comments |
 |:-|:-|
 |```push :H```|Push the character 'H' to the stack|
@@ -196,9 +237,9 @@ programmer to think about how the instructions will be laid out in the image)
 |```pop 1```|Pop the stack (print the top element - 'D')|
 
 
-### :assemble:complex
+#### :assemble:complex
 
-#### Code 
+##### Code 
 |Code |Comments |
 |:-|:-|
 |```1 3 push :H s```|Push the character 'H' to the stack, go south|
@@ -223,7 +264,7 @@ programmer to think about how the instructions will be laid out in the image)
 |```0 6 pop 1 -```|Pop (and print) the character 'D'|
 
 
-#### In Image 
+##### In Image 
 ||0|1|2|3|
 |:-:|:-:|:-:|:-:|:-:|
 |0|push :D ⬇ ➡|push :L ➡|push :O |X|
@@ -235,7 +276,7 @@ programmer to think about how the instructions will be laid out in the image)
 |6|pop 1|pop 1|pop 1|X|
 
 
-#### Navigation 
+##### Navigation 
 | Instruction | Next | Stack |
 |:-|:-|:-|
 |push :D|[(1, 0), (0, 1)]|(top)['D']|
@@ -260,7 +301,7 @@ programmer to think about how the instructions will be laid out in the image)
 |pop 1|[]|(top)[]|
 
 
-## How are the pixels encoded?
+### How are the pixels encoded?
 |R |G | B |
 |:-:|:-:|:-:|
 | OPCODE|OPERAND|EXIT DIRECTION |
@@ -268,5 +309,39 @@ programmer to think about how the instructions will be laid out in the image)
 The opcode ranges from 0 to 22, the operand 0 to 255 and the exit direction is effective at 0 to 15.
 
 
-## What is exit direction?
+### What is exit direction?
 Exit direction is the direction that the program flows. Execution starts in the top right [0,0] and the B value represents which adjacent pixels should be added to the execution queue. It is represented as a one hot encoded value such that 1111 represents WSEN. 
+
+
+
+
+## Licence 
+MIT License
+Copyright (c) fredhappyface
+(See the [LICENSE](/LICENSE.md) for more information.)
+
+
+<!--
+TODO: Add screenshots to readme-assets/screenshots/desktop/ named 
+screenshot-[number].png
+-->
+## Screenshots 
+
+### Desktop 
+|Screenshots                                                                                  |
+|:-:                                                                                          |
+|<img src="readme-assets/screenshots/desktop/screenshot-1.png" alt="Screenshot 1" width="600">|
+|<img src="readme-assets/screenshots/desktop/screenshot-2.png" alt="Screenshot 2" width="600">|
+|<img src="readme-assets/screenshots/desktop/screenshot-3.png" alt="Screenshot 3" width="600">| 
+
+
+
+## Limited Support
+Expect this project to be supported for approximately 6 months (for bug-fixes 
+only). Note that this is not guaranteed. Create an issue for bugs (as this 
+project is carried out in spare time, you may have to wait for a few days)
+
+<img src="readme-assets/support/partial.png" alt="Limited Support" width="600">
+
+
+
