@@ -19,9 +19,9 @@ def readFileContent(fileName):
     assemblyModeCheck = open(fileName).readline().rstrip().lower()
     if (assemblyModeCheck == ":assemble:simple"):
         assemblyMode = ":assemble:simple"
-        
 
-    
+
+
     lines = []
     file = open(fileName, "r")
     # Read line by line
@@ -36,7 +36,7 @@ def readFileContent(fileName):
 
 # Write the code to the image
 def writeCompiledImg(inputImgName, outputImgName, lines):
-    # Use the PIL Image library to open the input image 
+    # Use the PIL Image library to open the input image
     im = Image.open(inputImgName)
     pix = im.load()
 
@@ -56,13 +56,13 @@ def writeCompiledImg(inputImgName, outputImgName, lines):
             nextX, nextY, flagDir, x, y, r, g, b = pixFromLineSimple(lines[index],
                                                             nextX, nextY, imageWidth,
                                                                      flagDir)
-        
+
         #print (x, y, r, g, b)
         pix[int(x), int(y)] = (int(r), int(g), int(b))
 
     # Save the compiled image
     im.save(outputImgName, quality = 95)
-  
+
     return 0
 
 
@@ -90,7 +90,7 @@ def pixFromLineComplex(line):
     g = line[3]
     b = 0
 
-    # Convert an function to its int 
+    # Convert an function to its int
     for function in range (len(functions)):
         if line[2].lower() == functions[function]:
             r = function

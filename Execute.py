@@ -114,7 +114,7 @@ def ret(operand):
             pointers.append((location[0], location[1]+1))
         if operand >> 3 & 0b1:
             pointers.append((location[0]-1, location[1]))
-            
+
     except IndexError:
         print ("Tried to pop an empty call stack")
         exit(1)
@@ -160,7 +160,7 @@ def inpint(operand):
     except:
         print ("INVALID INPUT! Please input an integer")
         exit(1)
-    
+
     stack.append(userin)
     getpointers()
 
