@@ -113,9 +113,13 @@ the green component of the pixel
 General considerations:
 - :assemble:simple is the easiest way to program in Scritch source but is also 
 the least powerful
+
 - Only one instruction can be loaded after another 
+
 - 'end' must be used to declare the end of the file 
+
 - each non-commented or annotated line must be in the form 'opcode operand' 
+
 - Operands must be as described above (an int 0-255 or a char, declared with 
 a ':')
 
@@ -172,16 +176,24 @@ A note on exit direction:
 - Next instructions are loaded in the order North, East, South, West
 for example, if n&s is specified then the instruction at position (x, y-1)
 is loaded next, followed by the instruction at position (x, y+1)
-- & are ignored and have been included to improve readability (n&e&s - load North, East and South)
-- If there is no exit direction, use any character apart from 'nesw' (includes uppercase variants). '-' and '0' would make most sense 
+
+- & are ignored and have been included to improve readability (n&e&s - load 
+North, East and South)
+
+- If there is no exit direction, use any character apart from 'nesw' (includes 
+uppercase variants). '-' and '0' would make most sense 
 
 General considerations:
 - :assemble:complex is the least user-friendly way to program in Scritch 
 but makes for easier development of more complex programs (such as those 
 using jump - this is possible in :assemble:simple but requires the 
 programmer to think about how the instructions will be laid out in the image)
+
 - Up to three instructions can be loaded after another 
-- each non-commented or annotated line must be in the form 'x y opcode operand exit_direction'
+
+- each non-commented or annotated line must be in the form 'x y opcode operand 
+exit_direction'
+
 - Operands must be an int 0-255 or a char, declared with a ':'
 
 
@@ -315,11 +327,15 @@ programmer to think about how the instructions will be laid out in the image)
 |OPCODE|OPERAND|EXIT DIRECTION|
 
 
-The opcode ranges from 0 to 22, the operand 0 to 255 and the exit direction is effective at 0 to 15.
+The opcode ranges from 0 to 22, the operand 0 to 255 and the exit direction 
+is effective at 0 to 15.
 
 
 ### What is exit direction?
-Exit direction is the direction that the program flows. Execution starts in the top right [0,0] and the B value represents which adjacent pixels should be added to the execution queue. It is represented as a one hot encoded value such that 1111 represents WSEN. 
+Exit direction is the direction that the program flows. Execution starts in 
+the top right [0,0] and the B value represents which adjacent pixels should 
+be added to the execution queue. It is represented as a one hot encoded value 
+such that 1111 represents WSEN. 
 
 
 
